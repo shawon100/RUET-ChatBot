@@ -2,6 +2,8 @@
 
 require_once("config.php");
 
+
+
 $msgg=$_POST['input'];
 
 $msg=strtolower($msgg);
@@ -29,15 +31,15 @@ $send=mysqli_query($con,$sql);
 .in
 {
 	 background-color:rgb(64,128,255);
-	 color:white;padding:10px; 
-	 position:absolute;
+	 color:white;
+   padding:10px; 
 	 right:0;
 	 width:130px;
 	 text-align: center;
 	 height:auto;
 	 border-radius: 5px;
-	 margin-right: 20px;
-	 margin-bottom: 10px;
+	 margin-left: 120px;
+	 margin-bottom: 5px;
 	
 }
 
@@ -46,7 +48,6 @@ $send=mysqli_query($con,$sql);
     background-color:rgb(241,240,240);
     color:black;
     padding:10px; 
-    position:absolute; 
     left:5; 
     width:130px;
     text-align: center;
@@ -65,11 +66,12 @@ $send=mysqli_query($con,$sql);
 
 <body>
 
+
      <div class="in">
      
      <?php echo "$msgg"; ?>
 
-     </div><br><br>
+     </div><br>
 
     <div class="out">
 
@@ -111,7 +113,7 @@ $send=mysqli_query($con,$sql);
         if($flag==0)
         {
 
-        	 $output="Type only one keyword without space instead of full sentence. For Emergency Help Call: 01757687942 Or http://ruet.ac.bd";
+        	 $output="Sorry I have no knowledge of ".$msgg." yet. Type only one keyword without space instead of full sentence. For Emergency Help Call: 01757687942 Or http://ruet.ac.bd";
         	 $result = make_links_clickable($output);
         	 echo "$result";
           	 
@@ -127,7 +129,7 @@ $send=mysqli_query($con,$sql);
 
   
 
-     </div><br><br>
+     </div><br>
 
 </body>
 </html>
