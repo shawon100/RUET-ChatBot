@@ -8,9 +8,9 @@ It's a PHP, MySQL, Jquery ChatBot For My University RUET
 
 # Install
 ```
-Import chat.sql From Database Folder in your database<br><br>
-Run Your Server<br>
-Type localhost/charbot/chatbot.php on your Browser
+Import chat.sql From Database Folder in your database
+Run Your Server
+Type localhost/chatbot/chatbot.php on your Browser
 ```
 
 
