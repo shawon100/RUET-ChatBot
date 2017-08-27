@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ChatBot</title>
+  <title>RUET ChatBot</title>
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,7 +62,7 @@
         overflow-y: auto;
         
      }
-
+  
      input[type=text] 
      {
           width: 100%;
@@ -71,18 +71,22 @@
           box-sizing: border-box;
      }
 
-     .out
+     .ou
      {
         background-color:rgb(241,240,240);
         color:black;
         padding:10px; 
-        position:absolute; 
         left:5; 
         width:130px;
         text-align: center;
         height:auto;
         border-radius: 15px;
   
+      }
+      .stt
+      {
+         margin-top:5px;
+        
       }
 
   
@@ -111,7 +115,7 @@
 
 
 <div class="chat">
-<div id="sc"><center ><img style="float:left;" src="img/ruet.png" width="20px" height="20px"/><b>Chat With RUET</b></center></div>
+<a style="text-decoration:none;" href="#"><div id="sc"><center ><img style="float:left;" src="img/ruet.png" width="20px" height="20px"/><b>Chat With RUET</b></center></div></a>
 <div id="panel">
   
 
@@ -120,6 +124,7 @@
 $(document).ready(function(){
 
     var i=0;
+    var st;
 
     $("#sc").click(function(){
 
@@ -128,9 +133,10 @@ $(document).ready(function(){
 
           $("#panel").slideToggle();
 
-          if(i%2!=0)
+          if(i==1)
           {
-              $('#div').html("<div class=\"out\"> Hello Guest. Welcome To Ruet Chat</div>");
+              $('#div').html("<div class=\"ou\"> Hello Guest. Welcome To Ruet Chat</div><br>");
+
           }
           
 
@@ -170,13 +176,15 @@ $(document).ready(function(){
 //wait for page load to initialize script
 $(document).ready(function(){
 
+ window.alreadySubmit = false;
+
   $('#tt').keypress(function(f){
 
-
-     if(f.which == 13){
+     
+     if(f.which == 13 && !alreadySubmit) {
+        window.alreadySubmit = true;
 
     //listen for form submission
-
 
     $('form').on('submit', function(e){
       //prevent form from submitting and leaving page
@@ -192,25 +200,33 @@ $(document).ready(function(){
             success: function(result) { // data is the var which holds the output of your process.php
 
                 // locate the div with #result and fill it with returned data from process.php
+               
 
-                 
-                $('#div').html(result);
+                $('#div').append("<div class=\"stt\""+result+"</div>");
 
                 $('#tt').val("");
 
             }
         });
     });
+  }
     
        
-  }
+  
 });
 
    
 });
+
+               
 </script>
 
-<div id='div' name="output" ></div>
+<div id='div' name="output" >
+  
+  <div id="div1"></div>
+
+
+</div>
 <br>
 
 <!--<script>
