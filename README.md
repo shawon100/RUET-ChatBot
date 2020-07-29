@@ -3,7 +3,7 @@ It's a PHP, MySQL, Jquery ChatBot For My University RUET
 
 # Demo
 
-<a href="https://ruetchatbot.epizy.com">RUET ChatBot</a>
+<a href="http://ruetchatbot.epizy.com">RUET ChatBot</a>
 
 
 # Install
