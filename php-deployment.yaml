@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-sql
+spec:
+  selector:
+    app: webapp-sql
+    tier: frontend
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 80
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp1
+  labels:
+    app: webapp-sql
+    tier: frontend
+spec:
+  selector:
+    matchLabels:
+      app: webapp-sql
+      tier: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webapp-sql
+        tier: frontend
+    spec:
+      containers:
+      - name: webapp1
+        image: shawon10/ruetchatbot
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
