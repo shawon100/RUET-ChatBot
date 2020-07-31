@@ -13,6 +13,10 @@ Run Your Server
 Type localhost/chatbot/chatbot.php on your Browser
 ```
 
+# DevOps
+
+Watch this Video: https://www.youtube.com/watch?v=aG3Hq4KrvUI
+
 
 
 
