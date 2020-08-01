@@ -14,7 +14,7 @@ Type localhost/chatbot/chatbot.php on your Browser
 ```
 
 # DevOps
-
+## Deploy in Kubernetes
 Watch this Video: https://www.youtube.com/watch?v=aG3Hq4KrvUI
 
 
