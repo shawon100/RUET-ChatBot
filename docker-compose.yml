@@ -10,6 +10,7 @@ services:
       MYSQL_DATABASE: chat
     volumes:
       - /home/shawon/volume:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d/:ro
       
   app:
     build: ./
