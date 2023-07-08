@@ -1,0 +1,22 @@
+version: "2"
+services:
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    container_name: mysqlapp
+    environment:
+      MYSQL_ROOT_PASSWORD: 1test2
+      MYSQL_DATABASE: chat
+    volumes:
+      - /home/shawon/volume:/var/lib/mysql
+      
+  app:
+    build: ./
+    links:
+      - db
+    container_name: chatbotapp
+    ports:
+      - "5600:80"
+
+
