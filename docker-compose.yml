@@ -4,12 +4,12 @@ services:
     image: mysql
     ports:
       - "3306:3306"
-    container_name: mysqlapp
+    container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: 1test2
       MYSQL_DATABASE: chat
     volumes:
-      - /home/shawon/volume:/var/lib/mysql
+      - ./db-volume:/var/lib/mysql
       - ./database:/docker-entrypoint-initdb.d/:ro
       
   app:
